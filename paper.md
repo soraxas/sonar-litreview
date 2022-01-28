@@ -29,6 +29,25 @@ autoSectionLabels: True
 title: pandoc-crossref demo document
 ---
 
+# Introduction
+
+
+
+For example, the depth of the ocean can usually be measured by ascoustic echo-sounders on ships, or by satellite altimeters data.
+Ascoustic devices are widely adopted for systematic survey of ocean basin.
+Oceanographic and naval ships have operated echo sounders almost continuously while at sea, which faciliate millions of miles of ship-track data recorded to
+produce maps.
+The tracks are not well distributed and tends to clustered in regions that are high in traffic, such as commercial shipping routes.
+@fig:echo-sounder-location-australia illustrates an example of the echo-sounder data used for mapping the ocean floor near Australia.
+
+<div id="fig:echo-sounder-location-australia">
+  ![](echo-sounder-location-australia.png)
+
+Locations of echo-sounds data used for ocean floor mapping near Australia [@smith1996_ShipTrac]
+
+</div>
+
+
 For example, [@hahner2019_SemaUnde]
 For example, [@johnson-roberson2017_DrivMatr]
 
@@ -43,7 +62,106 @@ Autonomous Underwater Systems
 * [Bluefin 9](https://gdmissionsystems.com/products/underwater-vehicles/bluefin-9-autonomous-underwater-vehicle)
 * [ISE Explorer AUV](https://ise.bc.ca/product/explorer/)
 
+
+
+
+
+Multi-Apertere Somar (MAS) uses a dynamically focused hiufltkahi
+
+Active synthetic aperture sonar (SAS) is an enhancement from the standard, narrow beamwidth, sidescan sonar; capable of producing a more faithful, optical-like "image" of the seafloor. The image intensity represent the back scattered acoustic energy from a specific direction.
+
+
+Synthetic aperture radar (SAR) satellites collect swaths of side-looking echoes at a sufficiently high range resolution and along-track sampling rate to form high resolution imagery. For example,
+
+
+# Background Information
+
+Sonar (**SO**ound **N**avigation **A**nd **R**anging) and Radar (**RA**dio **D**etection **A**nd **R**anging) are two system that operates under the same principle but with different types of wave.
+Both systems are established to estimate the position of some foreign objects using waves [@altes1979_TargPosi].
+Sonar uses ultrasound for detection underwater, whereas Radar uses radio waves for above the land or underwater detection.
+Since their usage, techniques and terminology are often overlapping with literature, in the following, we shall briefly review techniques that are used in both systems and contrast the two.
+Then, we will focus on the current state-of-the-art type of systems within sonar technologies.
+
+
+Sonar uses sound propagation for navigation, communication, or detecting objects under the water surface. The term "sonar" is shared by two different technologies---_passive sonar_ and _active sonar_. @fig:passive-and-active-sonar illustrates an overview between the two systems.
+
+**Passive Sonar** signal processing performs time delay estimation for naval systems [@carter1981_TimeDela]. Signals received at two or more receiving sensors are used to estimate the position and velocity of some detected acoustic source. While a passive system has the advantage of covertness for military applications, their practicality is highly subjected to background noise as they cannot control the amount of transmitted energy reflected from the source. For example, @howell2003_PassSona and @deseixas2011_PrepPass utilise sensor data retrieved from passive sonar system for performing object detections with neural netowrks.
+
+
+
+@howell2003_PassSona [p. 33] says blah.
+
+
+<div id="fig:passive-and-active-sonar">
+  ![](passive-and-active-sonar.png)
+
+  Passive and active sonar system [@kuperman2014_UndeAcou]. **Passive:** submarine (right) passively detects sounds using a towed antenna array. The other submarine will receive machine noise on the left (blue) and surface shipping noise (red). These sounds are distorted by the shallow-water environment and are embedded in ocean surface noise (green). **Active:** ship on the right sends out a pulse (red) and receives an echo (blue), regardless of machine noise, which is in turn distorted by the shallow-water environment. The echo is returned to the ship, which needs to be distinguished from backscattered reverberation (yellow) and ocean noise (green). Various environmental factors (noises) are discussed in @sec:sonar-speed XXXXXXXXXXXXXXXXX
+</div>
+
+
+
+
+
+
+# Characteristic of Sonarr
+
+
+
+## Variability of the Speed of Sound {#sec:sonar-speed}
+
+The ocean's acoustic properties mainly depend on the ocean sound speed structure, which in turn depends on the osceangraphic environment.
+When a sound wave travels along a path from some localised source, the combination of the water column and bottom properties leads to a set of sound-propagation profiles [@medwin1999_FundAcou].
+Sound speed profile in the ocean water column has be experimentally derived [@mackenzie1981_NineEqua;@munk1998_AbysReci] as
+
+$$1994$${#eq:speed-of-sound-profile}
+```
+$$ C = 1448.96 + 4.591T − 0.05304T^2 + 0.0002374T^ 3 + 0.0160Z + (1.340 − 0.01025 T)(S − 35) + 1.675 \times 10^{−7} Z^2 − 7.139 \times 10^{−13} T Z^3 $$
+```
+
+
+
+where $C$ is the speed of sound in $m/s$, $T$ is the temperature in Celsius, $S$ is salinity (see XXXXXX), and Z is depth in meters (which characterises the ambient pressure).
+Note that the formulation details are not of interest in our scope of synthetic sonar modelling.
+However, [@eq:speed-of-sound-profile] illustrates the nonlinear relationship between the water temperature and the depth of the acoustic device.
+@fig:speed-profile illustrates a visualisation of the same plotted data across ocean depth.
+For typical oceanic conditions, $C$ is usually between 1450 m/s and 1550 m/s, which reflects the sensitivity of $C$ to changes of temperature, depth, and salinity.
+It is indicative that near-surface sonar devices will tend to experience higher variance inaccuracy due to the polar region near the ocean surface; the polar relationship decays as the depth increases.
+In a warmer season, or warmer part of the day, the increased temperature causes sound speed increases toward the sea surface (hence, the influence of $C$ is dominated by the temperature of the water); whereas the pressure term in @eq:speed-of-sound-profile is more significant in deeper water.
+These are potential factors to be considered in simulating sonar data for ML modelling, where the environmental factors might be essential conditional features for our ML model to learn.
+
+
+
+
+
+
+<div id="fig:speed-profile">
+  ![](sound-speed-profile.png)
+
+  Generic sound-speed profiles, which varies directly with temperature and hydrostatic pressure [@kuperman2014_UndeAcou].
+  Near-surface mixing leads to isovelocity (the gap in between the curves, which denotes the polar region)
+</div>
+
+
+
+
+
+# Environmental Factors for Simulation {#sec:environmental-factors}
+
+
+asd
+
 # Background
+
+Autonomous Underwater Vehicles had been increasingly being used by[@chappleAutoDete]
+
+@article{chappleAutoDete,
+title = {Automated {{Detection}} and {{Classification}} in {{High-resolution Sonar Imagery}} for {{Autonomous Underwater Vehicle Operations}}},
+author = {Chapple, Philip},
+pages = {37},
+abstract = {Autonomous Underwater Vehicles (AUVs) are increasingly being used by military forces to acquire high-resolution sonar imagery, in order to detect mines and other objects of interest on the seabed. Automatic detection and classification teclmiques are being developed for several reasons: to provide reliable and consistent detection of objects on the seabed; to free human analysts from time-consuming and tedious detection tasks; and to enable autonomous in-field decision-making based on observations of mines and other objects. This document reviews progress in the development of automated detection and classification teclmiques for side-looking sonars mounted on AUVs. Whilst the teclmiques have not yet reached maturity, considerable progress has been made in both unsupervised and supervised (trained) algoritluns for feature detection and classification. In some cases, the perfonnance and reliability of automated detection systems exceed those of human operators.},
+langid = {english},
+keywords = {⛔ No DOI found}
+}
 
 Sampling-based motion planning is one of the fundamental methods by which robots navigate and integrate with the real world [@elbanhawi2014_SampRobo].
 Motion planning involves planning the trajectories of the actuated part of the robot, under various constraints, while avoiding collisions with surrounding obstacles.
