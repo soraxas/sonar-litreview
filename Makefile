@@ -1,6 +1,7 @@
 OUTPUT_MD=output.md
 OUTPUT_JIRA=output.jira
 OUTPUT_PDF=output.pdf
+OUTPUT_HTML=output.html
 BIB=master.bib
 CSL=assets/apa.csl
 INPUT=paper.md
@@ -29,8 +30,8 @@ jira: $(OUTPUT_JIRA)
 pdf: $(OUTPUT_PDF)
 md: $(OUTPUT_MD)
 
-$(OUTPUT_JIRA): $(INPUT)
-	pandoc -s  -t jira $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
+$(OUTPUT_JIRA): $(INPUT) $(BIB)
+	pandoc --number-sections -s  -t jira $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
 
 	@# ensure anchor tag has newlines (to avoid messed up parsing by jira)
 	sed '/{anchor:sec/b; s#\({anchor:[^}]*}\)#\1\n\n#g' -i $@
@@ -58,6 +59,9 @@ $(OUTPUT_JIRA): $(INPUT)
 
 $(OUTPUT_PDF): $(INPUT)
 	pandoc -s --pdf-engine=xelatex -t pdf $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
+
+$(OUTPUT_HTML): $(INPUT)
+	pandoc -s  -t html $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
 
 $(OUTPUT_MD): $(INPUT)
 	pandoc -s -t markdown_strict $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
