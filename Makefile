@@ -27,6 +27,8 @@ USE_KATEX_FOR_EQ=\
 
 .PHONY=pdf jira md clean
 
+all: jira pdf md
+
 jira: $(OUTPUT_JIRA)
 pdf: $(OUTPUT_PDF)
 md: $(OUTPUT_MD)
