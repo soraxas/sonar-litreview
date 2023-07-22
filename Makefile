@@ -2,6 +2,7 @@ OUTPUT_MD=output.md
 OUTPUT_JIRA=output.jira
 OUTPUT_PDF=output.pdf
 OUTPUT_HTML=output.html
+OUTPUT_LATEX=output.tex
 BIB=master.bib
 CSL=assets/apa.csl
 INPUT=paper.md
@@ -62,6 +63,9 @@ $(OUTPUT_PDF): $(INPUT)
 
 $(OUTPUT_HTML): $(INPUT)
 	pandoc -s  -t html $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
+
+$(OUTPUT_LATEX): $(INPUT)
+	pandoc -s  -t latex $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
 
 $(OUTPUT_MD): $(INPUT)
 	pandoc -s -t markdown_strict $(CROSSREF_FLAGS) $(BIB_FLAGS) -o $@ $<
