@@ -45,7 +45,7 @@ algorithms for feature detection and classification. In some cases, the performa
 reliability of automated detection systems exceed those of human operators.
 
 <div id="fig:echo-sounder-location-australia">
-  ![](echo-sounder-location-australia.png)
+  ![](figs/echo-sounder-location-australia.png)
 
 Locations of echo-sounds data used for ocean floor mapping near Australia [@smith1996_ShipTrac]
 
@@ -81,7 +81,7 @@ Sonar uses ultrasound for detection underwater, whereas Radar uses radio waves f
 
 
 <div id="fig:passive-and-active-sonar">
-  ![](passive-and-active-sonar.png)
+  ![](figs/passive-and-active-sonar.png)
 
   Passive and active sonar system [@kuperman2014_UndeAcou]. **Passive:** submarine (right) passively detects sounds using a towed antenna array. The other submarine will receive machine noise on the left (blue) and surface shipping noise (red). These sounds are distorted by the shallow-water environment and are embedded in ocean surface noise (green). **Active:** ship on the right sends out a pulse (red) and receives an echo (blue), regardless of machine noise, which is in turn distorted by the shallow-water environment. The echo is returned to the ship, which needs to be distinguished from backscattered reverberation (yellow) and ocean noise (green)
 </div>
@@ -111,7 +111,7 @@ In a warmer season, or warmer part of the day, the increased temperature causes 
 These are potential factors to be considered in simulating sonar data for ML modelling, where the environmental factors might be essential conditional features for our ML model to learn.
 
 <div id="fig:speed-profile">
-  ![](sound-speed-profile.png)
+  ![](figs/sound-speed-profile.png)
 
   Generic sound-speed profiles vary directly with temperature and hydrostatic pressure [@kuperman2014_UndeAcou].
   Near-surface mixing leads to isovelocity (the gap in between the curves, which denotes the polar region)
@@ -129,7 +129,7 @@ These are potential factors to be considered in simulating sonar data for ML mod
   * The typical frequency usage at different depths are summarised in @tbl:sonar-frequency.
 
 <div id="fig:frequency-ocean-depth">
-  ![](frequency-ocean-depth.png)
+  ![](figs/frequency-ocean-depth.png)
 
   Classess of ocean depth, corresponds to @tbl:sonar-frequency  [@thurman2009_MultInte]
 </div>
@@ -179,8 +179,8 @@ Therefore, acoustic devices whose visibilities are not heavily dependent on the 
 
 
 <div id="fig:fls">
-  ![](fls.jpg)
-  ![](fls-device.jpg)
+  ![](figs/fls.jpg)
+  ![](figs/fls-device.jpg)
 
   Forward-looking sonar (FLS) and example outputs [@beaumont2021_ForwSona]
 </div>
@@ -199,7 +199,7 @@ Single-beam echosounders, also known as a depth sounder or fathometer, releases 
 The sonar ping is emitted from a transducer positioned below the water surface, and the return echo might be reflected by anything ranging from fish, debris, aquatic vegetation, suspended sediment, or the ocean seafloor. SBES can be dated back to 1925 for the first Fathometer (built by the Submarine Signal Company). They can be  relative portable nowadays as shown in @fig:single-beam-echo-sounder-product
 
 <div id="fig:single-beam-echo-sounder-product">
-  ![](single-beam-echo-sounder-product.png)
+  ![](figs/single-beam-echo-sounder-product.png)
 
   Single-beam echosounders as commercial products for boats [@ceehydrosystemsSingBeam]
 </div>
@@ -220,7 +220,7 @@ The timing and direction of the returning sound waves provide detailed informati
 @fig:single-multibeam-echosunder illustrates the qualitative differences between collecting data with an SBES and MBES
 
 <div id="fig:multi-beam-sonar">
-  ![](multi-beam-sonar.jpg)
+  ![](figs/multi-beam-sonar.jpg)
 
   Multibeam sonar for seafloor mapping [@noaaphotolibrary2016_ArtiConc]
 </div>
@@ -229,7 +229,7 @@ The timing and direction of the returning sound waves provide detailed informati
 Since MBES collects data by scanning the seafloor with multiple beams, the reconstructions of the mapping information require combining the collected depth information and the angles/timing at which the data are collected.
 
 <div id="fig:single-multibeam-echosunder">
-  ![](single-multibeam-echosunder.png)
+  ![](figs/single-multibeam-echosunder.png)
 
   Example of a single beam (top) and multi-beam echosounder
 (bottom) output [@usgs2018_HydrSurv]
@@ -250,7 +250,7 @@ is below that of SAS, MSIS and MBS, thus being well suited in underwater robotic
 tends to be a problem.
 
 <div id="fig:SSS">
-  ![](SSS.jpg)
+  ![](figs/SSS.jpg)
 
   Principle of a side-scan sonar mounted on an autonomous underwater vehicle [@lehoang2020_DeepGabo]
 </div>
@@ -286,7 +286,7 @@ SAS is an enhancement from the standard, narrow beamwidth, sidescan Sonar; capab
 
 
 <div id="fig:sas-figure">
-  ![](sas-figure.png)
+  ![](figs/sas-figure.png)
 
   With side scan sonar (left), each pulse measures a distinct, separate area of the seafloor. In contrast, the pulses of synthetic aperture sonar (right) overlap with each other and measure each area more than once. This artificially lengthens the reach of the array [@noaaExplTool]
 </div>
@@ -309,7 +309,7 @@ Compared to SAS, MAS addresses the AUV's Weight And Power (SWAP) budget issues.
 MAS draws only low 21 Watts (including data acquisition) – which makes it equivalent to the class leading AUV side-scan sonars – but it offers a range and accuracy like no other side-scan sonar. The precision of the Sonar over the initial 50 meter swath is as stunning as the leading SAS systems. At 75 meter range, the precision is better than two times that of the closest side-scan Sonar [@sonardyne2017_MASVs].
 
 <div id="fig:MAS">
-  ![](MAS.jpg)
+  ![](figs/MAS.jpg)
 
   UUV Operators Collect New, Clear Images from 76-year-old Shipwreck with a Bluefin-12 equipped with Sonardyne Solstice Multi Aperture Sonar at Sea Trials for the Royal Australian [@navyrecognition2020_SolsMult]
 </div>
@@ -328,13 +328,13 @@ Additionally, installing an MSIS on an AUV is not simple as they have a preferen
 orientation. @fig:msis-1 illustrates the typical device and @fig:msis2 shows the visualisation of the sensor output.
 
 <div id="fig:msis-1">
-  ![](msis-1.png)
+  ![](figs/msis-1.png)
 
   Typical fan shaped beam used on scanning sonars [@blueroboticsUndeUsin]
 </div>
 
 <div id="fig:msis2">
-  ![](msis-2.jpg)
+  ![](figs/msis-2.jpg)
 
   Scanning process of an MSIS. (a) The two boxes represent obstacles in the acoustic wave path; (b) Example of acoustic image. The colors depict the echo intensities, ranging from blue (low echo intensity) to red (high echo intensity). [@burguera2012_UspIPerf]
 </div>
@@ -395,7 +395,7 @@ the Gazebo simulator and the Robot Construction Kit (ROCK)
 framework. They can be used for virtual acoustic images from a **mechanical scanning sonar** and **forward-looking sonar** simulations.
 
 <div id="fig:gazebo-cerqueira2016_CustShad">
-  ![](gazebo-cerqueira2016_CustShad.png)
+  ![](figs/gazebo-cerqueira2016_CustShad.png)
 
   Gazebo simulator with custom shaders [@cerqueira2016_CustShad]
 </div>
@@ -409,7 +409,7 @@ interactive 3-D visualisation and interpretation
 of the sea.
 
 <div id="fig:3D-vis">
-  ![](3D-vis.png)
+  ![](figs/3D-vis.png)
 
   3-D segmentation, surface extraction, texture mapping and data fusion [@nikolov1997_Inte3D]
 </div>
@@ -421,7 +421,7 @@ The technique can generate realistic virtual acoustic images based on
 the proposed principles.
 
 <div id="fig:kwak2015_DeveAcou-vis">
-  ![](kwak2015_DeveAcou-vis.png)
+  ![](figs/kwak2015_DeveAcou-vis.png)
 
    Comparison of acoustic images and optical images: (a) acoustic image
 of cone, (b) acoustic image of cylinder, (c) optical image of cone, and
@@ -440,7 +440,7 @@ of cone, (b) acoustic image of cylinder, (c) optical image of cone, and
 
 
 <div id="fig:moos-acfr">
-  ![](moos-acfr.PNG)
+  ![](figs/moos-acfr.PNG)
 
   MOOS virualisation tool [@anderson2015_SimuSide]
 </div>
@@ -454,7 +454,7 @@ implemented plugins that model underwater hydrostatic and
 hydrodynamic effects, thrusters, sensors, and external disturbances (@fig:UUV-sim). In contrast to existing solutions, it reuses and extends a general-purpose robotics simulation platform to underwater environments. [Link](https://uuvsimulator.github.io/)
 
 <div id="fig:UUV-sim">
-  ![](UUV-sim.png)
+  ![](figs/UUV-sim.png)
 
   UUV Simulator - Software structure [@manhaes2016_UUVSimu]
 </div>
@@ -466,7 +466,7 @@ The software allows users to customise the modelling properties; for example, ma
 Qualitative evaluation of the simulated results can be performed by comparing them against experimental results that we would expect from physical scenarios. @fig:infinite-studio illustrates the interface of the infinite studio within unreal engine's software.
 
 <div id="fig:infinite-studio">
-  ![](infinite-studio.png)
+  ![](figs/infinite-studio.png)
 
   Inpinite Studio's interfacs
 </div>
@@ -476,7 +476,7 @@ Qualitative evaluation of the simulated results can be performed by comparing th
 @@manhaes2016_UUVSimu presents a physics-based multi-beam echosounder simulation method to capture these fundamental aspects of sonar perception. A point-based scattering model is implemented to calculate the acoustic interaction between the target and the environment @fig:dave. This simplified target scattering representation but can produce realistic coherent image speckle and the correct point spread function. The results demonstrate that this multi-beam echosounder simulator generates qualitatively realistic images with high efficiency to provide the sonar image and the physical time-series signal data.
 
 <div id="fig:dave">
-  ![](dave.gif)
+  ![](figs/dave.gif)
 
   Operating with the Dave Simulator [@field-robotics-labMultForw]
 </div>
@@ -487,8 +487,8 @@ Qualitative evaluation of the simulated results can be performed by comparing th
 * @mallios2017_UndeCave seems to be a high-quality underwater cave dataset published recently in The International Journal of Robotic Research on Underwater caves sonar data set. The dataset features a collection from an autonomous underwater vehicle testbed in the unstructured environment of an underwater cave complex. The dataset contains a packaged ROS bag (Robotic Operation System) and human-readable text files. The UAV contains multiple sensors such as 3D gyroscopes, accelerometers, 10 degrees of freedom MEMS inertial sensor, a Doppler velocity log, etc. The perception sensors include a mechanically scanned imaging sonar (MSIS), a dual-frequency profiling sonar, and a low-cost analog video camera. @fig:ijrr-dataset illustrate the UAV and its survey location; the dataset is available [here](https://cirs.udg.edu/caves-dataset/).
 
 <div id="fig:ijrr-dataset">
-  ![](ijrr-dataset-1.png)
-  ![](ijrr-dataset-2.png)
+  ![](figs/ijrr-dataset-1.png)
+  ![](figs/ijrr-dataset-2.png)
 
   Underwater cave dataset: UAV model and its survey location [@mallios2017_UndeCave]
 </div>
@@ -515,7 +515,7 @@ algorithm; it is better to restrict the training data to contain only typical ba
 and representative of those encountered in the detection task at hand.
 
 <div id="fig:data-preprocess">
-  ![](data-preprocess.png)
+  ![](figs/data-preprocess.png)
 
   Example of intensity and slant corrected acoustic image. The blind zone and the
 central bins, separating port and starboard, are outlined. The blind and low contrast zones under
@@ -527,13 +527,13 @@ constant altitude and flat floor assumptions are also shown. [@burguera2020_OnLi
 terrain types. They propose to perform online SSS segmentation based on a CNN with a sliding window, with the CNN architecture as shown in @fig:sonar-cnn-seg, and the data-processing step shown in @fig:data-seg-processing-step.
 
 <div id="fig:sonar-cnn-seg">
-  ![](sonar-cnn-seg.png)
+  ![](figs/sonar-cnn-seg.png)
 
   Neural Network architecture [@burguera2020_OnLiMult]
 </div>
 
 <div id="fig:data-seg-processing-step">
-  ![](data-seg-processing-step.png)
+  ![](figs/data-seg-processing-step.png)
 
   Example of data processing. (a,b): Modelled echo intensity E(p) according to Equation (5).
 (c,d): Raw SSS data. (e,f): Intensity and slant corrected acoustic image. [@burguera2020_OnLiMult]
@@ -546,7 +546,7 @@ a large dataset. @fig:auto-annotate is some predictions from the primitive model
 the methodology for automated data annotation.
 
 <div id="fig:auto-annotate">
-  ![](auto-annotate.png)
+  ![](figs/auto-annotate.png)
 
   In (a) two annotations are correctly suggested, and one is missed, which should be labelled
 manually. In (b) this image would take a long time to annotate manually. The primitive model has
@@ -556,13 +556,13 @@ done a reasonable job of cutting out the bulk of the workload [@karimanzira2020_
 @hurtos2013_AutoDete proposed a framework for automatic chain detection in underwater environment ([@fig:chain-detection]). The automatic chain link detection from Forward-Looking Sonar (FLS) imagery reduces the signal-to-noise ratio of the individual sonar frames, and cluster the local detections over time to increase robustness ([@fig:chain-detection-2]).
 
 <div id="fig:chain-detection">
-  ![](chain-detection.png)
+  ![](figs/chain-detection.png)
 
   Schematic of the link detection algorithm [@hurtos2013_AutoDete]
 </div>
 
 <div id="fig:chain-detection-2">
-  ![](chain-detection-2.png)
+  ![](figs/chain-detection-2.png)
 
   Example of established clusters (circled in white) after the accumulation of detections over a buffer of 9 images [@hurtos2013_AutoDete]
 </div>
