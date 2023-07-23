@@ -440,7 +440,7 @@ of cone, (b) acoustic image of cylinder, (c) optical image of cone, and
 
 
 <div id="fig:moos-acfr">
-  ![](figs/moos-acfr.PNG)
+  ![](figs/moos-acfr.png)
 
   MOOS virualisation tool [@anderson2015_SimuSide]
 </div>
